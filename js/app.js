@@ -41,7 +41,6 @@ var navbar = document.getElementById("navbar__list")
 function addElement (){
     const sections = document.getElementsByClassName("section")
     for (let section of sections) {
-
         const navli = document.createElement("li");
         const anchor = document.createElement("a");
         anchor.href = "#" + section.id;
@@ -68,6 +67,22 @@ function myFunction() {
 
 
 // Scroll to anchor ID using scrollTO event
+(function (){
+    "use strict";
+    let target = document.querySelectorAll('a[href^="#"]');
+    let i = 0;
+    for (i = 0; i < target.length; i++){
+        e.preventDefault();
+        target[i].onclick = function (e){
+        let hash = this.getAttribute("href");
+        let elem = document.getElementById(hash.replace ("#",""));
+        //history.pushState (null, null, hush);
+        elem.scrollIntoView({ behavior: 'smooth'});
+      }
+}
+}) ();
+
+
 
 
 /**
