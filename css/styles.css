@@ -69,13 +69,16 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     padding-left: 0;
     margin: 0;
     text-align: right;
 }
 
 .navbar__menu li {
-    display: inline-block;
+    float: right;
 }
 
 .navbar__menu .menu__link {
